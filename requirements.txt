@@ -1,0 +1,16 @@
+streamlit
+pandas==2.2.1
+plotly==5.22.0
+prophet
+matplotlib
+seaborn
+bokeh
+kaleido
+yfinance
+pandas-datareader
+numpy
+datetime
+openpyxl
+SQLAlchemy
+scipy
+pymysql
