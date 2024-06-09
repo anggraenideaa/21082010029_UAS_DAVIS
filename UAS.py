@@ -7,9 +7,10 @@ import plotly.graph_objects as go
 # Function to create a connection to the database
 def create_connection():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        passwd="",
+        host="kubela.id",
+        user="davis2024irwan",
+        passwd="wh451n9m@ch1n3",
+        port=3306,  
         database="aw"
     )
 
