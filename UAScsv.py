@@ -17,10 +17,10 @@ def main():
 
     # Sidebar untuk filter nama film
     st.sidebar.title('📊 Dashboard Pendapatan Film')
-    selected_movie = st.sidebar.selectbox("Filter Nama Film", ["Semua"] + list(data['Title'].unique()))
+    selected_movie = st.sidebar.selectbox("Filter Nama Film", ["All"] + list(data['Title'].unique()))
 
     # Filter data berdasarkan nama film yang dipilih
-    if selected_movie == "Semua":
+    if selected_movie == "All":
         filtered_data = data
     else:
         filtered_data = data[data['Title'] == selected_movie]
