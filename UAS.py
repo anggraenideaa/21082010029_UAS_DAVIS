@@ -112,45 +112,6 @@ def fetch_treemap_data(country=None):
     
     return data
 
-# # Function to fetch order quantity data
-# def fetch_order_quantity_data(country=None):
-#     dataBase = create_connection()
-#     cursor = dataBase.cursor()
-
-#     base_query = "SELECT fis.OrderQuantity FROM factinternetsales fis JOIN dimsalesterritory dst ON fis.SalesTerritoryKey = dst.SalesTerritoryKey {}"
-    
-#     if country:
-#         query = base_query.format(f"WHERE dst.SalesTerritoryCountry = '{country}'")
-#     else:
-#         query = base_query.format("")
-
-#     cursor.execute(query)
-#     data = pd.DataFrame(cursor.fetchall(), columns=['OrderQuantity'])
-
-#     cursor.close()
-#     dataBase.close()
-    
-#     return data
-
-# # Function to fetch total order quantity
-# def fetch_total_order_quantity(country=None):
-#     dataBase = create_connection()
-#     cursor = dataBase.cursor()
-
-#     base_query = "SELECT SUM(fis.OrderQuantity) AS TotalOrderQuantity FROM factinternetsales fis JOIN dimsalesterritory dst ON fis.SalesTerritoryKey = dst.SalesTerritoryKey {}"
-    
-#     if country:
-#         query = base_query.format(f"WHERE dst.SalesTerritoryCountry = '{country}'")
-#     else:
-#         query = base_query.format("")
-
-#     cursor.execute(query)
-#     total_order_quantity = cursor.fetchone()[0]
-
-#     cursor.close()
-#     dataBase.close()
-    
-#     return total_order_quantity
 
 # Function to fetch data for choropleth map
 def fetch_choropleth_data(country=None):
@@ -264,22 +225,7 @@ with col2:
                     f'<h1 style="font-size:50px; text-align:center;">{total_sales}</h1>'
                     '</div>', unsafe_allow_html=True)
                     
-    # # Fetch order quantity data based on selected country
-    # order_quantity_data = fetch_order_quantity_data(country=None if selected_country == 'All' else selected_country)
-    
 
-    # # Display histogram of order quantities
-    # st.markdown('<h2 style="font-size:20px; text-align:center;">Distribusi Order Quantity dari factinternetsales</h2>', unsafe_allow_html=True)
-    # fig = px.histogram(order_quantity_data, x='OrderQuantity', nbins=20, labels={'OrderQuantity': 'Order Quantity'}, color_discrete_sequence=["#543310"])
-    # fig.update_layout(xaxis_title='Order Quantity', yaxis_title='Frequency', width=600, height=400)
-    # st.plotly_chart(fig, use_container_width=True)
-
-    # # Fetch total order quantity based on selected country
-    # total_order_quantity = fetch_total_order_quantity(country=None if selected_country == 'All' else selected_country)
-
-    # # Display total order quantity
-    # st.markdown('<h2 style="font-size:20px; text-align:center;">Total Order Quantity</h2>', unsafe_allow_html=True)
-    # st.markdown(f'<h1 style="font-size:70px; text-align:center;">{total_order_quantity}</h1>', unsafe_allow_html=True)
 
     # Fetch data for histogram of sales amount by sales territory region based on selected country
     st.markdown('<h2 style="font-size:20px; text-align:center;">Histogram of Sales Amount by Sales Territory Region</h2>', unsafe_allow_html=True)
