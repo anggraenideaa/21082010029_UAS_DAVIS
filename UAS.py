@@ -183,6 +183,7 @@ with col1:
 
     st.markdown('<h2 style="font-size:20px; text-align:center;"></h2>', unsafe_allow_html=True)
     st.markdown('<h2 style="font-size:20px; text-align:center;"></h2>', unsafe_allow_html=True)
+    st.markdown('<h2 style="font-size:20px; text-align:center;"></h2>', unsafe_allow_html=True)
     # Display choropleth map
     st.markdown('<h2 style="font-size:20px; text-align:center;">Penjualan Terdistribusi di Berbagai Wilayah Penjualan (SalesTerritoryregion)</h2>', unsafe_allow_html=True)
     fig = go.Figure(go.Choropleth(
