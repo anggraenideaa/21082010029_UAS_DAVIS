@@ -172,7 +172,7 @@ with col1:
     pivot_data = sales_data.pivot_table(index='SalesTerritoryRegion', columns='ProductCategory', values='TotalSales', fill_value=0).reset_index()
 
     # Display bar chart using Plotly
-    st.markdown('<h2 style="font-size:20px; text-align:center;">Penjualan Per Kategori Produk berdasarkan Wilayah Penjualan</h2>', unsafe_allow_html=True)
+    st.markdown('<h2 style="font-size:20px; text-align:center;">Perbandingan Penjualan di Berbagai Region Untuk Berbagai Kategori Produk</h2>', unsafe_allow_html=True)
     fig = px.bar(pivot_data, x='SalesTerritoryRegion', y=pivot_data.columns[1:], color_discrete_sequence=["#543310", "#F8F4E1", "#AF8F6F"])
     st.plotly_chart(fig, use_container_width=True)
 
@@ -186,7 +186,7 @@ with col1:
     st.markdown('<h2 style="font-size:20px; text-align:center;"></h2>', unsafe_allow_html=True)
     st.markdown('<h2 style="font-size:20px; text-align:center;"></h2>', unsafe_allow_html=True)
     # Display choropleth map
-    st.markdown('<h2 style="font-size:20px; text-align:center;">Total Sales by Sales Territory Region</h2>', unsafe_allow_html=True)
+    st.markdown('<h2 style="font-size:20px; text-align:center;">Penjualan Terdistribusi di Berbagai Wilayah Penjualan (SalesTerritoryregion)</h2>', unsafe_allow_html=True)
     fig = go.Figure(go.Choropleth(
         locations=sales_territory_regions,  # Menggunakan nama region sebagai locations
         z=total_sales,  # Menentukan nilai yang akan diplot sebagai warna
@@ -211,7 +211,7 @@ with col2:
     treemap_data = fetch_treemap_data(country=None if selected_country == 'All' else selected_country)
 
     # Display treemap
-    st.markdown('<h2 style="font-size:20px; text-align:center;">Treemap Persentase Penjualan per Kategori Produk (Bahasa Inggris)</h2>', unsafe_allow_html=True)
+    st.markdown('<h2 style="font-size:20px; text-align:center;">Komposisi Total Penjualan Berdasarkan Kategori Produk</h2>', unsafe_allow_html=True)
     fig = px.treemap(treemap_data, path=['ProductCategory'], values='TotalSales', color_discrete_sequence=["#543310", "#74512D", "#AF8F6F"])
     st.plotly_chart(fig, use_container_width=True)
 
@@ -228,7 +228,7 @@ with col2:
 
 
     # Fetch data for histogram of sales amount by sales territory region based on selected country
-    st.markdown('<h2 style="font-size:20px; text-align:center;">Histogram of Sales Amount by Sales Territory Region</h2>', unsafe_allow_html=True)
+    st.markdown('<h2 style="font-size:20px; text-align:center;">Penjualan Terdistribusi di Berbagai Wilayah Penjualan (SalesTerritoryregion)</h2>', unsafe_allow_html=True)
     sales_amount_data = fetch_choropleth_data(country=None if selected_country == 'All' else selected_country)
 
 
