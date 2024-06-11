@@ -183,8 +183,6 @@ with col1:
 
     st.markdown('<h2 style="font-size:20px; text-align:center;"></h2>', unsafe_allow_html=True)
     st.markdown('<h2 style="font-size:20px; text-align:center;"></h2>', unsafe_allow_html=True)
-    st.markdown('<h2 style="font-size:20px; text-align:center;"></h2>', unsafe_allow_html=True)
-    st.markdown('<h2 style="font-size:20px; text-align:center;"></h2>', unsafe_allow_html=True)
     # Display choropleth map
     st.markdown('<h2 style="font-size:20px; text-align:center;">Penjualan Terdistribusi di Berbagai Wilayah Penjualan (SalesTerritoryregion)</h2>', unsafe_allow_html=True)
     fig = go.Figure(go.Choropleth(
@@ -216,7 +214,7 @@ with col2:
     st.plotly_chart(fig, use_container_width=True)
 
     # Display each product category and its total sales in a card format
-    st.markdown('<h2 style="font-size:20px; text-align:center;">Penjualan per Kategori Produk</h2>', unsafe_allow_html=True)
+    st.markdown('<h2 style="font-size:20px; text-align:center;">Total Penjualan Berdasarkan Kategori Produk</h2>', unsafe_allow_html=True)
     for index, row in treemap_data.iterrows():
         category = row['ProductCategory']
         total_sales = row['TotalSales']
