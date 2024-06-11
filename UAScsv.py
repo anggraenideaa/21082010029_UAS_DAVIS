@@ -27,7 +27,7 @@ def main():
 
     if not filtered_data.empty:
         # Bubble Chart: Menunjukkan hubungan antara Budget, Pendapatan Kotor Global, dan Durasi Film
-        st.markdown('<h2 style="font-size:20px; text-align:center;">Relationship antara Budget, Gross Worldwide, dan Runtime</h2>', unsafe_allow_html=True)
+        st.markdown('<h2 style="font-size:20px; text-align:center;">Hubungan antara Budget, Gross Worldwide, dan Runtime</h2>', unsafe_allow_html=True)
         # Kode untuk Bubble Chart
         fig1 = px.scatter(
             data_frame=filtered_data, 
