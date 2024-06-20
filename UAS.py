@@ -149,6 +149,10 @@ st.sidebar.title('📊 Dashboard Penjualan')
 countries = fetch_countries()
 selected_country = st.sidebar.selectbox('Pilih Negara', options=['All'] + countries)
 
+# Menambahkan Nama dengan link GitHub dan NPM di sidebar
+st.sidebar.markdown('<p style="font-size:14px; text-align:center;">Nama: <a href="https://github.com/anggraenideaa/21082010029_UAS_DAVIS" target="_blank">Dea Puspita Anggraeni</a></p>', unsafe_allow_html=True)
+st.sidebar.markdown('<p style="font-size:14px; text-align:center;">NPM: 21082010029</p>', unsafe_allow_html=True)
+
 # Fetch data based on selected country
 data = fetch_data(country=None if selected_country == 'All' else selected_country)
 
