@@ -19,6 +19,11 @@ def main():
     st.sidebar.title('📊 Dashboard Analisis Film')
     selected_movie = st.sidebar.selectbox("Filter Nama Film", ["All"] + list(data['Title'].unique()))
 
+    # Menambahkan Nama dengan link GitHub dan NPM di sidebar
+    st.sidebar.markdown('<p style="font-size:14px; text-align:center;">Nama: <a href="https://github.com/anggraenideaa/21082010029_UAS_DAVIS" target="_blank">Dea Puspita Anggraeni</a></p>', unsafe_allow_html=True)
+    st.sidebar.markdown('<p style="font-size:14px; text-align:center;">NPM: 21082010029</p>', unsafe_allow_html=True)
+
+
     # Filter data berdasarkan nama film yang dipilih
     if selected_movie == "All":
         filtered_data = data
