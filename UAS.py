@@ -240,3 +240,31 @@ with col2:
                 labels={'SalesTerritoryRegion': 'Sales Territory Region', 'TotalSales': 'Total Sales'}, color_discrete_sequence=["#543310"])
     fig.update_xaxes(tickangle=-45)
     st.plotly_chart(fig, use_container_width=True)
+
+    # Adding text card below the last graph for narrative explanation
+    st.markdown("""
+        <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin-top: 20px;">
+            <h2 style="font-size:20px; text-align:center;">Penjelasan Grafik</h2>
+            <p style="text-align:justify;">
+                1. <b>Data yang digunakan</b> adalah datawerehouse adventure works.
+            </p>
+            <p style="text-align:justify;">
+                2. <b>Scatter Plot Hubungan Antara Pendapatan Tahunan dan Total Penjualan</b> digunakan untuk mengetahui hubungan antara jumlah penjualan dengan pendapatan tahunan customer.
+            </p>
+            <p style="text-align:justify;">
+                3. <b>Treemap Persentase Penjualan per Kategori Produk (Bahasa Inggris)</b> digunakan untuk mengetahui perbandingan penjualan di berbagai region untuk berbagai kategori produk.
+            </p>
+            <p style="text-align:justify;">
+                4. <b>Card Text per Kategori Produk</b> yang diambil dari grafik treemap untuk menampilkan penjualan tiap produk.
+            </p>
+            <p style="text-align:justify;">
+                5. <b>Stacked Bar Chart Penjualan Per Kategori Produk berdasarkan Wilayah Penjualan</b> digunakan untuk mengetahui perbandingan penjualan di berbagai region untuk berbagai kategori produk.
+            </p>
+            <p style="text-align:justify;">
+                6. <b>Map Chart Total Sales by Sales Territory Region</b> digunakan untuk mengetahui peta wilayah region yang terhubung dari stacked bar chart.
+            </p>
+            <p style="text-align:justify;">
+                7. <b>Column Histogram Histogram of Sales Amount by Sales Territory Region</b> digunakan untuk mengetahui penjualan terdistribusi di berbagai wilayah penjualan (SalesTerritoryregion).
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
