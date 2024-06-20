@@ -98,5 +98,27 @@ def main():
     else:
         st.warning("Film tidak ditemukan dalam data.")
 
+
+    st.markdown("""
+        <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin-top: 20px;">
+            <h2 style="font-size:20px; text-align:center;">Penjelasan Grafik</h2>
+            <p style="text-align:justify;">
+                <b>1. Data </b> yang digunakan adalah scrapping film Top Picks dari pencarian film The Garfield Movie pada link <a href="https://www.imdb.com" target="_blank">www.imdb.com</a> dengan mengambil informasi berupa judul film, link film, informasi box office dan technical specs.
+            </p>
+            <p style="text-align:justify;">
+                <b>2. Bubble Plot Hubungan antara Budget, Gross Worldwide, dan Runtime</b> digunakan untuk mengetahui hubungan antara Budget, Gross Worldwide, dan Runtime.
+            </p>
+            <p style="text-align:justify;">
+                <b>3. Bar Chart Perbandingan antara Gross US & Canada and Gross Worldwide per Film</b> digunakan untuk membandingkan dua variabel yaitu Gross US & Canada dengan Gross Worldwide untuk setiap film.
+            </p>
+            <p style="text-align:justify;">
+                <b>4. Scatter Plot Distribusi Dua Variabel: Opening Weekend vs Gross US & Canada</b> digunakan untuk mengetahui distribusi pendapatan dua variabel yaitu Opening Weekend US & Canada dan Gross US & Canada.
+            </p>
+            <p style="text-align:justify;">
+                <b>5. Stacked Bar Chart Komposisi Pendapatan Kotor Film</b> digunakan untuk mengetahui komposisi dari total pendapatan dari berbagai film berdasarkan Gross US & Canada, Gross Worldwide, dan Opening Weekend US & Canada.
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
+
 if __name__ == "__main__":
     main()
