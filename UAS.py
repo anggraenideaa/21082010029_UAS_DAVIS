@@ -3,15 +3,23 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
+import toml
+
+# Function to load database configuration from secrets.toml
+def load_db_config():
+    with open('secrets.toml', 'r') as f:
+        config = toml.load(f)
+    return config['database']
 
 # Function to create a connection to the database
 def create_connection():
+    config = load_db_config()
     return mysql.connector.connect(
-        host="kubela.id",
-        user="davis2024irwan",
-        passwd="wh451n9m@ch1n3",
-        port=3306,  
-        database="aw"
+        host=config['DB_HOST'],
+        user=config['DB_USER'],
+        passwd=config['DB_PASS'],
+        port=config['DB_PORT'],
+        database=config['DB_NAME']
     )
 
 # Function to fetch data based on selected country
@@ -28,7 +36,7 @@ def fetch_data(country=None):
     {}
     GROUP BY dc.YearlyIncome
     """
-    
+
     if country:
         query = base_query.format(f"WHERE dst.SalesTerritoryCountry = '{country}'")
     else:
@@ -39,21 +47,21 @@ def fetch_data(country=None):
 
     cursor.close()
     dataBase.close()
-    
+
     return data
 
 # Function to fetch available countries
 def fetch_countries():
     dataBase = create_connection()
     cursor = dataBase.cursor()
-    
+
     cursor.execute("SELECT DISTINCT SalesTerritoryCountry FROM dimsalesterritory")
     countries = [row[0] for row in cursor.fetchall()]
-    
+
     cursor.close()
     dataBase.close()
-    
-    return countries
+
+    return countries  # Corrected variable name from countriess to countries
 
 # Function to fetch sales data per product category by sales territory
 def fetch_sales_data(country=None):
