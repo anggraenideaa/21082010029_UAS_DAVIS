@@ -241,30 +241,50 @@ with col2:
     fig.update_xaxes(tickangle=-45)
     st.plotly_chart(fig, use_container_width=True)
 
-    # Adding text card below the last graph for narrative explanation
+    # Adding the interactive expander for Grafik Explanation
+with st.expander("Penjelasan Grafik", expanded=False):
     st.markdown("""
-        <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin-top: 20px;">
-            <h2 style="font-size:20px; text-align:center;">Penjelasan Grafik</h2>
-            <p style="text-align:justify;">
-                1. <b>Data yang digunakan</b> adalah datawerehouse adventure works.
-            </p>
-            <p style="text-align:justify;">
-                2. <b>Scatter Plot Hubungan Antara Pendapatan Tahunan dan Total Penjualan</b> digunakan untuk mengetahui hubungan antara jumlah penjualan dengan pendapatan tahunan customer.
-            </p>
-            <p style="text-align:justify;">
-                3. <b>Treemap Persentase Penjualan per Kategori Produk (Bahasa Inggris)</b> digunakan untuk mengetahui perbandingan penjualan di berbagai region untuk berbagai kategori produk.
-            </p>
-            <p style="text-align:justify;">
-                4. <b>Card Text per Kategori Produk</b> yang diambil dari grafik treemap untuk menampilkan penjualan tiap produk.
-            </p>
-            <p style="text-align:justify;">
-                5. <b>Stacked Bar Chart Penjualan Per Kategori Produk berdasarkan Wilayah Penjualan</b> digunakan untuk mengetahui perbandingan penjualan di berbagai region untuk berbagai kategori produk.
-            </p>
-            <p style="text-align:justify;">
-                6. <b>Map Chart Total Sales by Sales Territory Region</b> digunakan untuk mengetahui peta wilayah region yang terhubung dari stacked bar chart.
-            </p>
-            <p style="text-align:justify;">
-                7. <b>Column Histogram Histogram of Sales Amount by Sales Territory Region</b> digunakan untuk mengetahui penjualan terdistribusi di berbagai wilayah penjualan (SalesTerritoryregion).
-            </p>
-        </div>
+    <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px;">
+        <h2 style="font-size:20px; text-align:center;">Penjelasan Grafik</h2>
+        <p style="text-align:justify;">
+            <b>Data yang digunakan</b>:
+            <br><b>Tujuan</b> adalah datawerehouse adventure works.
+        </p>
+        <p style="text-align:justify;">
+            <b>Bubble Plot Hubungan antara Budget, Gross Worldwide, dan Runtime</b>:
+            <br><b>Tujuan</b>: Memahami bagaimana anggaran produksi (Budget), pendapatan kotor global (Gross Worldwide), dan durasi film (Runtime) saling berkaitan.
+        </p>
+        <p style="text-align:justify;">
+            <b>Bar Chart Perbandingan antara Gross US & Canada dan Gross Worldwide per Film</b>:
+            <br><b>Tujuan</b>: Membandingkan pendapatan kotor di AS & Kanada dengan pendapatan kotor global untuk setiap film.
+        </p>
+        <p style="text-align:justify;">
+            <b>Scatter Plot Distribusi Dua Variabel: Opening Weekend vs Gross US & Canada</b>:
+            <br><b>Tujuan</b>: Mengetahui distribusi pendapatan selama akhir pekan pembukaan di AS & Kanada dibandingkan dengan total pendapatan kotor di AS & Kanada.
+        </p>
+        <p style="text-align:justify;">
+            <b>Stacked Bar Chart Komposisi Pendapatan Kotor Film</b>:
+            <br><b>Tujuan</b>: Mengetahui komposisi pendapatan total dari berbagai film berdasarkan pendapatan di AS & Kanada, pendapatan global, dan pendapatan selama akhir pekan pembukaan di AS & Kanada.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+# Adding the interactive expander for Dashboard Usage Interpretation
+with st.expander("Interpretasi Penggunaan Dashboard", expanded=False):
+    st.markdown("""
+    <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px;">
+        <h2 style="font-size:20px; text-align:center;">Interpretasi Penggunaan Dashboard</h2>
+        <h3 style="font-size:18px;">Fitur Interaktif</h3>
+        <p style="text-align:justify;">
+            <b>Klik/Hover</b>: Setiap chart pada dashboard ini bisa diklik atau dihover untuk highlight detail.
+            <br><b>Zoom</b>: Chart juga bisa dizoom untuk melihat bagian yang lebih spesifik.
+            <br><b>Geser</b>: Jika terdapat visualisasi peta, Anda dapat menggeser dan melakukan zoom untuk melihat lokasi tertentu dengan lebih jelas.
+            <br><b>Treemap</b>: Treemap memungkinkan Anda untuk mengeklik bagian tertentu untuk mengeksplorasi data lebih detail.
+            <br><b>Reset</b>: Untuk mengembalikan chart ke tampilan default, cukup dengan mengklik dua kali pada chart tersebut.
+        </p>
+        <h3 style="font-size:18px;">Filter</h3>
+        <p style="text-align:justify;">
+            <b>Filter Berdasarkan Negara</b>: Di sisi kiri dashboard, terdapat filter yang memungkinkan Anda untuk memfilter data berdasarkan negara tertentu. Untuk mengembalikan ke tampilan semula, pilih filter "All".
+        </p>
+    </div>
     """, unsafe_allow_html=True)
