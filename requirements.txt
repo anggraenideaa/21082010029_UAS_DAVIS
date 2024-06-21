@@ -15,3 +15,4 @@ SQLAlchemy
 scipy
 pymysql
 mysql-connector-python
+toml
