@@ -7,9 +7,10 @@ import toml
 
 # Function to load database configuration from secrets.toml
 def load_db_config():
-    with open('secrets.toml', 'r') as f:
+    with open('.streamlit/secrets.toml', 'r') as f:
         config = toml.load(f)
     return config['database']
+
 
 # Function to create a connection to the database
 def create_connection():
