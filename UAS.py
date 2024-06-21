@@ -3,24 +3,16 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
-import toml
-
-# Function to load database configuration from secrets.toml
-def load_db_config():
-    with open('.streamlit/secrets.toml', 'r') as f:
-        config = toml.load(f)
-    return config['database']
-
 
 # Function to create a connection to the database
 def create_connection():
-    config = load_db_config()
+    config = st.secrets["database"]
     return mysql.connector.connect(
-        host=config['DB_HOST'],
-        user=config['DB_USER'],
-        passwd=config['DB_PASS'],
-        port=config['DB_PORT'],
-        database=config['DB_NAME']
+        host=config["host"],
+        user=config["user"],
+        password=config["password"],
+        port=config["port"],
+        database=config["database"]
     )
 
 # Function to fetch data based on selected country
