@@ -1,4 +1,4 @@
 # Ignore file .toml
 
 
-.streamlit/secrets.toml
+secrets.toml
