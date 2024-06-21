@@ -99,11 +99,13 @@ def main():
         st.warning("Film tidak ditemukan dalam data.")
 
 
-    st.markdown("""
+    # Adding the interactive expander for Grafik Explanation
+    with st.expander("Penjelasan Grafik", expanded=False):
+        st.markdown("""
         <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin-top: 20px;">
             <h2 style="font-size:20px; text-align:center;">Penjelasan Grafik</h2>
             <p style="text-align:justify;">
-                <b>1. Data </b> yang digunakan adalah scrapping film Top Picks dari pencarian film The Garfield Movie pada link <a href="https://www.imdb.com" target="_blank">www.imdb.com</a> dengan mengambil informasi berupa judul film, link film, informasi box office dan technical specs.
+                <b>1. Data</b> yang digunakan adalah scrapping film Top Picks dari pencarian film The Garfield Movie pada link <a href="https://www.imdb.com" target="_blank">www.imdb.com</a> dengan mengambil informasi berupa judul film, link film, informasi box office dan technical specs.
             </p>
             <p style="text-align:justify;">
                 <b>2. Bubble Plot Hubungan antara Budget, Gross Worldwide, dan Runtime</b> digunakan untuk mengetahui hubungan antara Budget, Gross Worldwide, dan Runtime.
@@ -118,7 +120,25 @@ def main():
                 <b>5. Stacked Bar Chart Komposisi Pendapatan Kotor Film</b> digunakan untuk mengetahui komposisi dari total pendapatan dari berbagai film berdasarkan Gross US & Canada, Gross Worldwide, dan Opening Weekend US & Canada.
             </p>
         </div>
-    """, unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
+    
+    # Adding the interactive expander for Dashboard Usage Interpretation
+    with st.expander("Interpretasi Penggunaan Dashboard", expanded=False):
+        st.markdown("""
+        <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin-top: 20px;">
+            <h2 style="font-size:20px; text-align:center;">Interpretasi Penggunaan Dashboard</h2>
+            <h3 style="font-size:18px;">Fitur Interaktif</h3>
+            <p style="text-align:justify;">
+                <b>Klik/Hover</b>: Setiap chart pada dashboard ini bisa diklik atau dihover untuk highlight detail.
+                <br><b>Zoom</b>: Chart juga bisa dizoom untuk melihat bagian yang lebih spesifik.
+                <br><b>Reset</b>: Untuk mengembalikan chart ke tampilan default, cukup dengan mengklik dua kali pada chart tersebut.
+            </p>
+            <h3 style="font-size:18px;">Filter</h3>
+            <p style="text-align:justify;">
+                <b>Filter Berdasarkan Nama Film</b>: Di sisi kiri dashboard, terdapat filter yang memungkinkan Anda untuk memfilter data berdasarkan nama film tertentu. Untuk mengembalikan ke tampilan semula, pilih filter "All".
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
